@@ -1,0 +1,49 @@
+<ion-view view-title="Registro">
+  <ion-content class="padding">
+    <form name='formularioRegistro' ng-controller="RegistroCtrl" >
+    <div clas="list">
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Nombre</span>
+            <input type="text" ng-model="nombres" placeholder="Tu Nombre" required>
+        </label>
+        <label class="item item-input item-floating-label" required>
+            <span class="input-label">Apellidos</span>
+            <input type="text" ng-model="apellidos" placeholder="Tus Apellidos" required>
+        </label>
+         <label class="item item-input item-floating-label">
+            <span class="input-label">Sexo</span>
+            <input type="text" ng-model="sexo" placeholder="Tu Sexo" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Tipo de Documento</span>
+            <input type="text" ng-model="tipo" placeholder="Tipo de Documento" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Número de Documento</span>
+            <input type="text" ng-model="documento" placeholder="Número de Documento" required>
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Fecha de Nacimiento</span>
+            <input type="date" ng-model="nacimiento" placeholder="Fecha de Nacimiento" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Teléfono</span>
+            <input type="text" ng-model="telefono" placeholder="Teléfono" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Correo Electrónico</span>
+            <input type="email" ng-model="correo" placeholder="Correo Electrónico" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Contraseña</span>
+            <input type="password" ng-model="password" placeholder="Contraseña" required>
+        </label>
+	    <ion-checkbox ng-model="terminos" required>Acepto los términos y Condiciones.</ion-checkbox>
+        <label class="item item-input ">
+            <a href="#/app/terminos">Leer Aquí</a>
+        </label>
+        <button ng-disabled='!formularioRegistro.$valid' id="signup-button3" class="button button-positive  button-block button-positive icon-left ion-android-person-add" ng-click="inscribir();redirSplash();" style="font-weight:500;font-style:italic;color:#000000;font-size:16px;border-radius:1px 1px 1px 1px;">Registrate!!</button>
+        </div>
+    </form>
+  </ion-content>
+</ion-view>

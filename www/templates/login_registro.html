@@ -1,0 +1,21 @@
+<ion-view align-title="center" view-title="Inicio" class="bar-positive">
+  <ion-content>
+    <div class="item item-image">
+        <img src="img/fondo.svg">
+    </div>
+    <form name="formularioLogin" ng-controller="LoginCtrl" >
+      <div class="list">
+         <label class="item item-input">
+          <span class="input-label">Correo</span>
+          <input type="email" ng-model="loginInfo.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Contraseña</span>
+          <input type="password" ng-model="loginInfo.password">
+        </label> 
+       <button  id="signup-button3" class="button button-positive  button-block button-positive icon-left ion-android-log-in" ng-click="loginUser();" style="font-weight:500;font-style:italic;color:#000000;font-size:16px;border-radius:1px 1px 1px 1px;">Ingresar</button>
+        <a href="#/app/sign-up" class="button button-block button-positive icon-left ion-android-person-add" style="font-weight:500;font-style:italic;color:#000000;font-size:16px;border-radius:1px 1px 1px 1px;" type="submit">Registrarse</a>        
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
