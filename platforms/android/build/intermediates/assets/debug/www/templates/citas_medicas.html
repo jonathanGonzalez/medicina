@@ -1,0 +1,47 @@
+<ion-view view-title="Citas Medicas">
+  <ion-content>
+    <p class="padding">Publica tus sintomas o tu necesidad, los medicos que utilizan la plataforma responderán con una oferta para ti. Puedes escoger la mejor según tus necesidades.</p>
+    <form name='formularioCitas' ng-controller="ConsultaCtrl" >
+    <div clas="list">
+        <label  class="item item-floating-label">
+            <input type="number" ng-model="idUsuario" placeholder="Id Del Usuario " required>            
+        </label> 
+        <p>{{id}}</p>
+        <label class="item item-input item-select">
+            <div class="input-label">Usuario de la consulta:</div>
+            <select ng-model="usuario" required>
+                <option>Usuario app</option>
+                <!--<option>Otro</option>-->
+            </select> 
+        </label>
+        <label  class="item item-floating-label">
+            <input type="text" ng-model="direccion" placeholder="Dirección " required>            
+        </label> 
+        <label class="item item-input item-select">
+           <div class="input-label">Tipo de consulta:</div>
+            <select ng-model="tipoConsulta" required>
+                <option>En Casa</option>
+                <option>En consultorio</option>
+            </select>
+        </label>
+        <label  class="item item-label">
+             <span class="input-label">Fecha de consulta:</span>
+             <input type="date" ng-model="fecha" required>
+        </label>
+         <label  class="item item-label">
+             <span class="input-label">Hora de consulta:</span>
+             <input type="text" ng-model="hora" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Sintomas</span>
+            <textarea cols="25" rows="5" placeholder="Sintomas" ng-model="sintomas" required></textarea>
+            
+        </label>
+       <button ng-disabled='!formularioCitas.$valid' id="consulta-button4" class="button button-positive  button-block button-positive icon-left ion-android-person-add" ng-click="consulta();" style="font-weight:500;font-style:italic;color:#000000;font-size:16px;border-radius:1px 1px 1px 1px;">Solicitar Consulta</button>
+        </div>
+    </form>
+  </ion-content>
+    <ion-footer-bar align-title="center" class="bar-positive">        
+        <h1 class="title">MedicApp M&eacute;dicos noche y d&iacute;a</h1>
+    </ion-footer-bar>
+</ion-view>

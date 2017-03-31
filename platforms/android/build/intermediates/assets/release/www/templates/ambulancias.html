@@ -1,0 +1,32 @@
+<ion-view view-title="Servicio de Ambulancias">
+  <ion-content>
+    <p class="padding">Accede al servicio del traslado en Ambulancias.</p>
+    <form name='formularioambulancias' ng-controller="ambulanciasCtrl" >
+    <div clas="list">
+        <label  class="item item-floating-label">
+            <input type="number" ng-model="idUsuario" placeholder="Id Del Usuario " required>            
+        </label> 
+        <label  class="item item-label">
+             <span class="input-label">Fecha de traslado</span>
+             <input type="date" ng-model="fecha" required>
+        </label>
+         <label  class="item item-label item-floating-label">
+              <span class="input-label">Hora</span>
+             <input type="text" ng-model="hora" placeholder="Hora de traslado " required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Lugar</span>
+            <input type="text" ng-model="lugar" placeholder="Dirección donde requiere el servicio" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Descripción</span>
+            <textarea cols="25" rows="5" placeholder="Descripcion" ng-model="descripcion" required></textarea>
+        </label>
+       <button ng-disabled='!formularioambulancias.$valid' id="consulta-button4" class="button button-positive  button-block button-positive icon-left ion-android-person-add" ng-click="ambulancias();" style="font-weight:500;font-style:italic;color:#000000;font-size:16px;border-radius:1px 1px 1px 1px;">Solicitar Consulta</button>
+        </div>
+    </form>
+  </ion-content>
+    <ion-footer-bar align-title="center" class="bar-positive">        
+        <h1 class="title">MedicApp M&eacute;dicos noche y d&iacute;a</h1>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.0.1_9c4e0b32a8e8ea707ecafa063d127812b8eccfce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.0.1_eaadb714ed89862fc9076933baad5edd191638ad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\release\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="66fb3f5d60c9065aa96110391bd8bc228c046eeb">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\release\CordovaLib-unspecified-release_7e0facdc13a5e47aa60f75ce6f5c6c530f4cc1fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.0.1_9d7aa1ce53e455fd2c8896d08f5d38403664fb1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_e74d92554bb7ec3dd35a696b32dce4fcbb9653e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_24d9f1b6922ad28680917797008f5b79b31d106d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_ff9f20a6185d669a00e841fd138a1e051b34fcc1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_c8a7e4f8fa09acc53781b5ced5a6c9d0996bf62d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_e45fa6b27011fd1a913a8468db82a2b3a972fd53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-25.0.1_51ab30143fbff50b8779a9626e6d377c1c44e7c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="57d1a5202427694984bdaf0e1c5787fc3eefe90f">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_7b8a585833f3494a7ff6c330f97a29c4ec8ab323.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.1_64fa98071ef8a3af51165d095e431afc28a8be2f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.0.1_439ec3ca1b7abc93424f71a4308128f8bf32278b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\xampp\htdocs\Co-Workers\APPS\MedicApp\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.1_6b20102c90e9544ff463683f9d745b62ae7721c5.jar" />
+    </item>
+
+</items>

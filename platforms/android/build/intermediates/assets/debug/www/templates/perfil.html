@@ -1,0 +1,30 @@
+<ion-view view-title="Perfil">
+  <ion-content class="padding">
+    <form name='formularioPerfil' ng-controller="PerfilCtrl">
+    <div clas="list">
+        
+        <label class="item item-input item-floating-label  ">
+            <span class="input-label">id del usuario</span>
+            <input type="number" ng-model="id_registro" placeholder="¿Cual es tu id?" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Medicamentos que tomas</span>
+            <input type="text" ng-model="medicamentos" placeholder="¿Qué medicamentos tomas actualmente?" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Alergias a Medicamentos</span>
+            <input type="text" ng-model="alergias" placeholder="¿Eres alérgico a algún medicamento? ¿Cual(es)?" required>
+        </label>
+         <label class="item item-input item-floating-label">
+            <span class="input-label">Cirugias</span>
+            <input type="text" ng-model="cirugias" placeholder="¿Te has hecho Cirugias? ¿Cual(es)?" required>
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">EPS</span>
+            <input type="text" ng-model="eps" placeholder="¿Cual es tu EPS?"required>
+        </label>
+        <button ng-disabled='!formularioPerfil.$valid' id="perfil-button4" class="button button-positive  button-block button-positive icon-left ion-android-person-add" ng-click="actPerfil();redirPerfil();" style="font-weight:500;font-style:italic;color:#000000;font-size:16px;border-radius:1px 1px 1px 1px;">Guardar Perfil</button>
+        </div>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view title="Check Out">
+    <ion-content padding="'true'" class="has-header">
+		<div ng-show="loggedin()" >
+			<div class="button-bar">
+				<a href="#/page4" class="button button-balanced button-block ">Login</a>
+				<a href="#/page5" class="button button-calm button-block ">Register</a>
+			</div>
+			<div>
+				<p>Or</p>
+			</div>
+		</div>
+        <form class="list">
+            <label class="item item-input">
+                <span class="input-label" style="padding-right:75px">Nombre*</span>
+                <textarea placeholder="" > {{" "+loggedin_nombres}}</textarea>
+            </label>
+            <label class="item item-input">
+                <span class="input-label" style="padding-right:10px" >apellidos*</span>
+                <textarea placeholder=""  > {{" "+loggedin_apellidos}}</textarea>
+            </label>
+            <label class="item item-input">
+                <span class="input-label" style="padding-right:0px">correo*</span>
+				<textarea placeholder=""  > {{" "+loggedin_correo}}</textarea>
+            </label>
+        
+        </form>
+        <div class="spacer" style="width: 300px; height: 15px;"></div>
+        <form class="list">
+            <label class="item item-input">
+                <span class="input-label">Coupon</span>
+                <input type="text" placeholder="(Optional)">
+            </label>
+        </form>
+        <a href="#/page8" class="button button-balanced button-outline button-block ">Check Out</a>
+    </ion-content>
+</ion-view>
