@@ -49,9 +49,12 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         
         $http.post("http://co-workers.com.co/adaris/medicapp/api/login.php", data).success(function(response){
             console.log(response);
-            localStorage.setItem('id',JSON.stringify(response[0].id));
+            localStorage.setItem('id',JSON.stringify(response[0].id));            
+            alert("Ha iniciado sesión correctamente.");
             $window.location = "#/app/main";
+       
        }).error(function(error){
+         alert("Ha ocurrido un error. Intenta nuevamente");
             console.error(error);
         });
     
@@ -239,8 +242,7 @@ $window.location = "#/app/perfil";
       {
             'idUsuario': $scope.idUsuario, 'usuario': $scope.usuario, 'direccion': $scope.direccion,  'tipoConsulta': $scope.tipoConsulta, 'fecha': $scope.fecha, 'hora': $scope.hora, 'sintomas':$scope.sintomas,
       }).success(function(data,status,header,config){
-               if(data.msg!= ''){
-                ////////////////////
+              
 
                         $cordovaLocalNotification.schedule({
                           id: 1,
@@ -252,20 +254,6 @@ $window.location = "#/app/perfil";
                         }).then(function (result) {
                           // ...
                         });
-              }else{
-                          $cordovaLocalNotification.schedule({
-                          id: 1,
-                          title: 'Espera,',
-                          text: ' No hemos podido registrar su consulta, intentalo nuevamente',
-                          data: {
-                            customProperty: 'custom value'
-                          }
-                        }).then(function (result) {
-                          // ...
-                        });
-                
-              }
-
 
           }).error(function(){
 

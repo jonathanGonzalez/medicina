@@ -29,7 +29,7 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 //Fin del controlador para la vista Main
 //controlador para Ingresar a la cuenta del Usuario
 
-.controller('LoginCtrl', function($http,$scope, $window){
+.controller('LoginCtrl', function($http,$scope, $window, $ionicPopup){
 
     //Variables
     $scope.loginInfo = {
@@ -49,9 +49,22 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         
         $http.post("http://co-workers.com.co/adaris/medicapp/api/login.php", data).success(function(response){
             console.log(response);
-            localStorage.setItem('id',JSON.stringify(response[0].id));
+            localStorage.setItem('id',JSON.stringify(response[0].id));   
+            var alertPopup = $ionicPopup.alert({
+                      title: 'Sr. Usuario',
+                      template: 'Nos alegra que estes de regreso en MedicApp.',
+                      cssClass: 'dark',
+                      okType: 'button-positive'
+                    });
             $window.location = "#/app/main";
+       
        }).error(function(error){
+         var alertPopup = $ionicPopup.alert({
+                      title: 'Sr. Usuario',
+                      template: 'Ha ocurrido un error. Intenta nuevamente.',
+                      cssClass: 'dark',
+                      okType: 'button-positive'
+                    });
             console.error(error);
         });
     
@@ -217,7 +230,7 @@ $window.location = "#/app/perfil";
 })
 //Inicia el controlador para la Consulta médica General
 
-.controller('ConsultaCtrl', function($http,$ionicPopup,$scope,$window,$cordovaLocalNotification){
+.controller('ConsultaCtrl', function($http,$ionicPopup,$scope,$window,$cordovaLocalNotification, $cordovaToast){
   $scope.id = localStorage.getItem('id');
 
   if(localStorage['id'] === undefined){
@@ -228,44 +241,32 @@ $window.location = "#/app/perfil";
  $scope.errors = [];
  $scope.msgs =[];
  $scope.consulta = function(){
-
-    $scope.errors.splice(0,$scope.errors.length);
-    $scope.msgs.splice(0,$scope.msgs.length);
-
-  
-      
-      if ($scope.idUsuario != null && $scope.usuario != null && $scope.direccion != null && $scope.tipoConsulta != null && $scope.fecha != null && $scope.hora != null && $scope.sintomas != null) {
+    var confirmPopup = $ionicPopup.confirm({
+       title: 'Sr. Usuario',
+       template: '¿Está seguro que quiere hacer esta consulta?'
+     });
+     confirmPopup.then(function(res) {
+       if(res) {
+         if ($scope.idUsuario != null && $scope.usuario != null && $scope.direccion != null && $scope.tipoConsulta != null && $scope.fecha != null && $scope.hora != null && $scope.sintomas != null) {
       $http.post('http://co-workers.com.co/adaris/medicapp/api/consulta.php',
       {
             'idUsuario': $scope.idUsuario, 'usuario': $scope.usuario, 'direccion': $scope.direccion,  'tipoConsulta': $scope.tipoConsulta, 'fecha': $scope.fecha, 'hora': $scope.hora, 'sintomas':$scope.sintomas,
       }).success(function(data,status,header,config){
-               if(data.msg!= ''){
-                ////////////////////
-
-                        $cordovaLocalNotification.schedule({
-                          id: 1,
-                          title: 'Felicidades,',
-                          text: ' Su consulta está en proceso de verificación. Le contactaremos prontamente.',
-                          data: {
-                            customProperty: 'custom value'
-                          }
-                        }).then(function (result) {
-                          // ...
-                        });
-              }else{
-                          $cordovaLocalNotification.schedule({
-                          id: 1,
-                          title: 'Espera,',
-                          text: ' No hemos podido registrar su consulta, intentalo nuevamente',
-                          data: {
-                            customProperty: 'custom value'
-                          }
-                        }).then(function (result) {
-                          // ...
-                        });
-                
+         $cordovaToast.showLongBottom('Ha efectuado su solicitud de consulta correctamente. Le contactaremos prontamente.').then(function(success) {
+                // success
+            }, function (error) {
+                // error
+         });           
+              $cordovaLocalNotification.schedule({
+              id: 1,
+              title: 'Felicidades,',
+              text: ' Su consulta está en proceso de verificación. Le contactaremos prontamente.',
+              data: {
+              customProperty: 'custom value'
               }
-
+              }).then(function (result) {
+              // ...
+              });
 
           }).error(function(){
 
@@ -292,6 +293,18 @@ $window.location = "#/app/perfil";
       
     });
     }
+       }
+       else {
+          $cordovaToast.showLongBottom('Ha cancelado su consulta').then(function(success) {
+                // success
+            }, function (error) {
+                // error
+         });
+       }});
+
+  
+      
+      
     
 }})
 
@@ -300,37 +313,38 @@ $window.location = "#/app/perfil";
 
 //Inicia el controlador para la Consulta de enfermería
 
-.controller('EnfermeriaCtrl', function($http,$window,$ionicPopup,$scope,$cordovaLocalNotification){
+.controller('EnfermeriaCtrl', function($http,$window,$ionicPopup,$scope,$cordovaLocalNotification, $cordovaToast){
   if(localStorage['id'] === undefined){
     $window.location = "#/app/login_registro";
   }
- $scope.errors = [];
- $scope.msgs =[];
  $scope.consulta_enfermeria = function(){
-
-    $scope.errors.splice(0,$scope.errors.length);
-      $scope.msgs.splice(0,$scope.msgs.length);
-      if ($scope.idUsuario != null && $scope.usuario != null && $scope.direccion != null && $scope.tipoConsulta != null && $scope.fecha != null && $scope.hora != null && $scope.sintomas != null) {
+   var confirmPopup = $ionicPopup.confirm({
+       title: 'Sr. Usuario',
+       template: '¿Está seguro que quiere hacer esta consulta'
+     });
+     confirmPopup.then(function(res) {
+       if(res) {
+         if ($scope.idUsuario != null && $scope.usuario != null && $scope.direccion != null && $scope.tipoConsulta != null && $scope.fecha != null && $scope.hora != null && $scope.sintomas != null) {
       $http.post('http://co-workers.com.co/adaris/medicapp/api/consultaEnfermeria.php',
       {
             'idUsuario': $scope.idUsuario, 'usuario': $scope.usuario, 'direccion': $scope.direccion,  'tipoConsulta': $scope.tipoConsulta, 'fecha': $scope.fecha, 'hora': $scope.hora, 'sintomas':$scope.sintomas,
       }).success(function(data,status,header,config){
-               if(data.msg!= ''){
-
-                    $cordovaLocalNotification.schedule({
-                    id: 1,
-                    title: 'Felicidades,',
-                    text: 'Su consulta está en proceso de verificación. Le contactaremos prontamente.',
-                    data: {
-                      customProperty: 'custom value'
-                    }
-                  }).then(function (result) {
-                          // ...
-                        });
-               }else{
-               $scope.errors.push(data.error); 
-                
-              }
+         $cordovaToast.showLongBottom('Su solicitud de consulta se ha realizado con éxito. le contactaremos prontamente').then(function(success) {
+                // success
+            }, function (error) {
+                // error
+         });
+            $cordovaLocalNotification.schedule({
+            id: 1,
+            title: 'Felicidades,',
+            text: 'Su consulta está en proceso de verificación. Le contactaremos prontamente.',
+            data: {
+            customProperty: 'custom value'
+            }
+            }).then(function (result) {
+            // ...
+            });
+              
 
 
           }).error(function(){
@@ -358,6 +372,16 @@ $window.location = "#/app/perfil";
           }).then(function (result) {
           })
     }
+       }
+       else{
+         $cordovaToast.showLongBottom('Ha cancelado su consulta para enfermería').then(function(success) {
+                // success
+            }, function (error) {
+                // error
+         });
+       }
+     })
+      
     
 }})
 
@@ -450,38 +474,40 @@ localStorage.removeItem('id');
   ];
 })
 
-.controller('ambulanciasCtrl', function($http,$ionicPopup,$scope,$cordovaLocalNotification){
+.controller('ambulanciasCtrl', function($http,$ionicPopup,$scope,$cordovaLocalNotification, $cordovaToast){
  $scope.userID = localStorage.getItem('id');
  if(localStorage['id'] === undefined){
     $window.location = "#/app/login_registro";
   }
 
- $scope.errors = [];
- $scope.msgs =[];
  $scope.ambulancias = function(){
-
-    $scope.errors.splice(0,$scope.errors.length);
-      $scope.msgs.splice(0,$scope.msgs.length);
-      if ($scope.idUsuario != null && $scope.fecha != null && $scope.hora != null && $scope.lugar != null && $scope.descripcion != null) {
+ var confirmPopup = $ionicPopup.confirm({
+       title: 'Sr. Usuario',
+       template: '¿Está seguro que quiere hacer este pedido?'
+     });
+     confirmPopup.then(function(res) {
+       if(res) {
+         if ($scope.idUsuario != null && $scope.fecha != null && $scope.hora != null && $scope.lugar != null && $scope.descripcion != null) {
       $http.post('http://co-workers.com.co/adaris/medicapp/api/ambulancias.php',
       {
             'idUsuario': $scope.idUsuario, 'fecha': $scope.fecha, 'hora': $scope.hora, 'lugar': $scope.lugar, 'descripcion': $scope.descripcion,
       }).success(function(data,status,header,config){
-               if(data.msg!= ''){
+        $cordovaToast.showLongBottom('Su solicitud para el servicio de ambulancias se ha realizado con éxito. le contactaremos prontamente').then(function(success) {
+                // success
+            }, function (error) {
+                // error
+         });
                $cordovaLocalNotification.schedule({
                     id: 1,
                     title: 'Felicidades,',
-                    text: 'Su consulta está en proceso de verificación. Le contactaremos prontamente.',
+                    text: 'Su solicitud para el servicio de ambulancia está en proceso de verificación. Le contactaremos prontamente.',
                     data: {
                       customProperty: 'custom value'
                     }
                   }).then(function (result) {
                           // ...
                         });
-               }else{
-               $scope.errors.push(data.error); 
-                
-              }
+               
 
 
           }).error(function(){
@@ -489,7 +515,7 @@ localStorage.removeItem('id');
                           $cordovaLocalNotification.schedule({
                           id: 1,
                           title: 'Espera,',
-                          text: 'Su consulta no ha podido ser procesada, Por favor intentelo nuevamente',
+                          text: 'Susolicitud no ha podido ser procesada, Por favor intentelo nuevamente',
                           data: {
                             customProperty: 'custom value'
                           }
@@ -502,13 +528,23 @@ localStorage.removeItem('id');
           $cordovaLocalNotification.schedule({
           id: 1,
           title: 'Espera,',
-          text: 'Su consulta no ha podido ser procesada, Por favor intentelo nuevamente',
+          text: 'solicitud no ha podido ser procesada, Por favor intentelo nuevamente',
           data: {
           customProperty: 'custom value'
           }
           }).then(function (result) {
           })
     }
+       }
+       else{
+        $cordovaToast.showLongBottom('Ha cancelado su solicitud para el servicio de ambulancias').then(function(success) {
+                // success
+            }, function (error) {
+                // error
+         });
+       }
+     })
+      
     
 }})
 

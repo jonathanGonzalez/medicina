@@ -1,4 +1,0 @@
-#Fri Mar 31 18:17:32 COT 2017
-base.0=C\:\\xampp\\htdocs\\Co-Workers\\APPS\\MedicApp\\platforms\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=C\:\\xampp\\htdocs\\Co-Workers\\APPS\\MedicApp\\platforms\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

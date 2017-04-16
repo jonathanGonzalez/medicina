@@ -5,13 +5,13 @@
     </div>
     <form name="formularioLogin" ng-controller="LoginCtrl" >
       <div class="list">
-         <label class="item item-input">
+         <label class="item item-input item-floating-label">
           <span class="input-label">Correo</span>
-          <input type="email" ng-model="loginInfo.username">
+          <input type="email" placeholder="Correo" ng-model="loginInfo.username">
         </label>
-        <label class="item item-input">
+        <label class="item item-input item-floating-label">
           <span class="input-label">Contraseña</span>
-          <input type="password" ng-model="loginInfo.password">
+          <input type="password" placeholder="Contraseña" ng-model="loginInfo.password">
         </label> 
        <button  id="signup-button3" class="button button-positive  button-block button-positive icon-left ion-android-log-in" ng-click="loginUser();" style="font-weight:500;font-style:italic;color:#000000;font-size:16px;border-radius:1px 1px 1px 1px;">Ingresar</button>
         <a href="#/app/sign-up" class="button button-block button-positive icon-left ion-android-person-add" style="font-weight:500;font-style:italic;color:#000000;font-size:16px;border-radius:1px 1px 1px 1px;" type="submit">Registrarse</a>        
